@@ -1,28 +1,22 @@
-#!/bin/bash
-
-# Simple Interest Calculator
-
-# Function to calculate simple interest
-calculate_simple_interest() {
-    local principal=$1
-    local rate=$2
-    local time=$3
-    echo "scale=2; ($principal * $rate * $time) / 100" | bc
-}
-
-# Check if the correct number of arguments are provided
-if [ "$#" -ne 3 ]; then
-    echo "Usage: $0 <principal> <rate> <time>"
-    exit 1
-fi
-
-# Assign arguments to variables
-principal=$1
-rate=$2
-time=$3
-
-# Calculate simple interest
-simple_interest=$(calculate_simple_interest $principal $rate $time)
-
-# Output the result
-echo "The simple interest for a principal of $principal, rate of $rate%, and time of $time years is: $simple_interest"
+ #!/bin/bash
+   # This script calculates simple interest given principal,
+   # annual rate of interest and time period in years.
+   # Do not use this in production. Sample purpose only.
+   # Author: Upkar Lidder (IBM)
+   # Additional Authors:
+   # <your GitHub username>
+   # Input:
+   # p, principal amount
+   # t, time period in years
+   # r, annual rate of interest
+   # Output:
+   # simple interest = p*t*r
+   echo "Enter the principal:"
+   read p
+   echo "Enter rate of interest per year:"
+   read r
+   echo "Enter time period in years:"
+   read t
+   s=`expr $p \* $t \* $r / 100`
+   echo "The simple interest is: "
+   echo $s
